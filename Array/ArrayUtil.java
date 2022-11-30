@@ -1,8 +1,42 @@
 import java.util.Scanner;
 
 public class ArrayUtil
-{
+{	
+	public static int [] generaCasuali(int n,int min, int max)
+	{
+		
+		if(min>max)
+		{
+			throw new IllegalArgumentException();
+		}
+		int [] vett=new int[n];
+		for(int i=0;i<vett.length;i++)
+		{
+			vett[i]=(int)(min+(max-min+1)*Math.random());
+		}
+		return vett;
 
+	}
+	public static int[] copiaArray(int vett[])
+	{
+		if(vett==null)
+		{
+			return null;
+		}
+		copiaArray(vett,vett.length)
+	}
+	public static int[] copiaArray(int vett[], int vSize)
+	{
+		if(vett==null)
+		{
+			return null;
+		}
+		
+		int [] newVett= new int[vSize];
+		System.arraycopy(vett,0,newVett,0,vSize);
+		return newVett;
+	
+	}
 	public static int [] resize(int[] vett, int newSize)
 	{
 		int [] newVett= new int[newSize];
