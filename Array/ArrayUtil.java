@@ -23,7 +23,7 @@ public class ArrayUtil
 		{
 			return null;
 		}
-		copiaArray(vett,vett.length)
+		return copiaArray(vett,vett.length);
 	}
 	public static int[] copiaArray(int vett[], int vSize)
 	{
