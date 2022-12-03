@@ -2,7 +2,7 @@
 
 public class QuickSort
 {
-	public static void main(String [] args) throws Exception
+	/*public static void main(String [] args) throws Exception
 	{
 		int [] vett = {1,4,3,7,2,34,23,1,4,6,787,45,23,4,4534,564,343543,354,45};
 	 
@@ -12,14 +12,30 @@ public class QuickSort
 		{
 	 		System.out.println(vett[i]);
 		}
+	}/* */
+	public static void sort(int [] v)
+	{
+		sort(v, 0, v.length);
+
+	}
+	/**
+		Metodo da chiamare per ordinare il vettore 
+		@param v Vetore di int da ordinare
+		@param vSize Dimenzione dinamica vettore
+
+	*/
+	public static void sort(int [] v, int vSize)
+	{
+		if(v.length<vSize){return;}
+		sort(v,0,vSize);
 	}
 	
-	public static void sort(int [] vett,int start,int end) throws Exception
+	public static void sort(int [] vett,int start,int end)
 	{
 		System.out.println(start+" "+end);
 		if(start>vett.length || end>vett.length ||start<0)
 		{
-			throw new Exception("Start or End Not Valid");
+			throw new IllegalArgumentException("Start or End Not Valid");
 		}
 		if(start>end)return;
 		if(Math.abs(end-start)<=1)return;

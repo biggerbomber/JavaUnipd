@@ -7,7 +7,7 @@ public class BankAccountTester
 		
 		Scanner input=new Scanner(System.in);
 		String comando;
-		BankAccount b= new BankAccount();
+		SavingAccount b= new SavingAccount(0);
 		do
 		{
 			System.out.println("Comando? (Q, B, D, W, A)");
@@ -43,8 +43,9 @@ public class BankAccountTester
 					
 					}else if(comando.equalsIgnoreCase("A"))
 					{
-						if(b.interest(Double.parseDouble(param)))
+						if(b.changeInterest(Double.parseDouble(param)))
 						{
+							b.addInterest();
 							System.out.println("ok");
 						}else
 						{

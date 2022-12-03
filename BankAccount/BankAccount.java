@@ -32,18 +32,7 @@ public class BankAccount
 			return false;	
 		}
 	}
-	public boolean interest(double x)
-	{
-		if(x>0)
-		{
-			if(this.deposit(this.balance*x/100))
-			{
-				return true;
-			}
-			return false;
-		}
-		return false;
-	}
+	
 	public double getBalance()
 	{ 
 		return balance;

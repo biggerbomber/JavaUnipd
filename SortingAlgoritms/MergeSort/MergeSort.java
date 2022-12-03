@@ -20,16 +20,36 @@ public class MergeSort
 	}*/
 	/**
 		Metodo da chiamare per ordinare il vettore 
+		@param v Vetore di int da ordinare
+	*/
+	public static void sort(int [] v)
+	{
+		sort(v, 0, v.length);
+
+	}
+	/**
+		Metodo da chiamare per ordinare il vettore 
+		@param v Vetore di int da ordinare
+		@param vSize Dimenzione dinamica vettore
+
+	*/
+	public static void sort(int [] v, int vSize)
+	{
+		if(v.length<vSize){return;}
+		sort(v,0,vSize);
+	}
+	/**
+		Metodo da chiamare per ordinare il vettore 
 		@param vett Vetore di int da ordinare
 		@param start posizione iniziale inclusa
 		@param end posizone finale esclusa
-		@throws Exception Start oppure End non valido
+		@throws IllegalArgumentException Start oppure End non valido
 	*/	
-	public static void sort(int [] vett, int start, int end) throws Exception
+	public static void sort(int [] vett, int start, int end)
 	{
 		if(start>=vett.length || end>vett.length ||start>end||start<0)
 		{
-			throw new Exception("Start or End Not Valid");
+			throw new IllegalArgumentException("Start or End Not Valid");
 		}
 		if(end-start<=1)return;
 		
