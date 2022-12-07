@@ -6,6 +6,7 @@ public class ScomposizionePrimi{
 			Scanner input =new Scanner(System.in);
 			
 			int N=input.nextInt();
+			input.close();
 			int saveN=N;
 			int [] primi=crivello(N/2);
 			int [] scomposizione= new int[N];
@@ -27,7 +28,7 @@ public class ScomposizionePrimi{
 				}else{
 					System.out.print(" * "+scomposizione[i]);
 				}
-			}
+			}		
     }
 	
 	public static int[] crivello(int N){
