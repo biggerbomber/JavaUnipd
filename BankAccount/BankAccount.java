@@ -37,8 +37,18 @@ public class BankAccount
 	{ 
 		return balance;
 	}
+	public boolean transfer(double amount, BankAccount other)
+    	{ 
+        	return(withdraw(amount) && other.deposit(amount));
+        	
+    	}
 	public String toString()
-	{ 
-		return "BankAccount: saldo corrente pari a "+balance;
-	}
+    	{
+		return "BankAccount[balance="+balance+"]"+super.toString();
+    	}
+   	public boolean equals(Object other)
+   	{
+    		BankAccount b=(BankAccount)other;
+    		return balance==b.getBalance();
+    	}	
 }

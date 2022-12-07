@@ -66,5 +66,6 @@ public class BankAccountTester
 			}
 			 
 		}while(!comando.equalsIgnoreCase("Q"));
+		input.close();
 	}
 }
