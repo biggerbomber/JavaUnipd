@@ -1,5 +1,6 @@
 
-public class BankAccount
+
+public class BankAccount implements Comparable
 { 
 	private double balance;
 	public BankAccount()
@@ -50,5 +51,12 @@ public class BankAccount
    	{
     		BankAccount b=(BankAccount)other;
     		return balance==b.getBalance();
-    	}	
+    }
+	public int compareTo(Object other)
+	{
+		BankAccount b = (BankAccount)other;
+		if(balance>b.balance) return 1;
+		if(balance<b.balance) return -1;
+		return 0;
+	}	
 }

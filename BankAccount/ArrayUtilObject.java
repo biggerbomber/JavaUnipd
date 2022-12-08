@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class ArrayUtil
+public class ArrayUtilObject
 {	
-	public static int [] generaCasuali(int n,int min, int max)
+	public static int [] generaIntCasuali(int n,int min, int max)
 	{
 		
 		if(min>max)
@@ -17,7 +17,7 @@ public class ArrayUtil
 		return vett;
 
 	}
-	public static int[] copiaArray(int vett[])
+	public static Object[] copiaArray(Comparable vett[])
 	{
 		if(vett==null)
 		{
@@ -25,21 +25,21 @@ public class ArrayUtil
 		}
 		return copiaArray(vett,vett.length);
 	}
-	public static int[] copiaArray(int vett[], int vSize)
+	public static Object[] copiaArray(Object vett[], int vSize)
 	{
 		if(vett==null)
 		{
 			return null;
 		}
 		
-		int [] newVett= new int[vSize];
+		Object [] newVett= new Object[vSize];
 		System.arraycopy(vett,0,newVett,0,vSize);
 		return newVett;
 	
 	}
-	public static int [] resize(int[] vett, int newSize)
+	public static Object [] resize(Object[] vett, int newSize)
 	{
-		int [] newVett= new int[newSize];
+		Object [] newVett= new Object[newSize];
 		
 		for(int i=0;i<vett.length && i<newSize;i++)
 		{
@@ -58,12 +58,12 @@ public class ArrayUtil
 		return rand;
 		
 	}
-	public static String printArray(int[] v)
+	public static String printArray(Object[] v)
 	{
 		if(v==null)return "null";
 		return printArray(v,v.length);
 	}
-	public static String printArray(int[] v, int vSize)
+	public static String printArray(Object[] v, int vSize)
 	{
 		if(vSize==0){return "[]";}
 		String output="["+v[0];
@@ -77,12 +77,12 @@ public class ArrayUtil
 		return output;
 	}
 	
-	public static void remove(int[] v, int vSize, int index)
+	public static void remove(Object[] v, int vSize, int index)
 	{
 		v[index]=v[vSize-1];
 	
 	}
-	public static void removeSorted(int[] v, int vSize, int index)
+	public static void removeSorted(Object[] v, int vSize, int index)
 	{
 		
 		for(int i=index+1;i<vSize;i++)
@@ -90,13 +90,11 @@ public class ArrayUtil
 			v[i-1]=v[i];
 		}
 	}
-	public static int [] insert(int[] v, int vSize, int index, int value)
+	public static Object [] insert(Object[] v, int vSize, int index, int value)
 	{
 		if(v.length==vSize)
 		{
-			
-			throw new ArrayOutOfSpaceException();
-			
+			throw new ArrayOutOfSpaceException();	
 		}
 		
 		for(int i=vSize;i>index;i--)
@@ -108,33 +106,8 @@ public class ArrayUtil
 		return v;
 	
 	}
-	public static int findMin(int[] v, int vSize)
-	{
-		if(vSize==0) {return Integer.MIN_VALUE;}
-		int min= v[0];
-		for(int i=1;i<vSize;i++)
-		{
-			if(v[i]<min)
-			{
-				min=v[i];
-			}
-		}
-		return min;
-	}
-	public static int findMax(int[] v, int vSize)
-	{
-		if(vSize==0) {return Integer.MAX_VALUE;}
-		int max= v[0];
-		for(int i=1;i<vSize;i++)
-		{
-			if(v[i]>max)
-			{
-				max=v[i];
-			}
-		}
-		return max;
-	}
-	public static int find(int[] v, int vSize, int target)
+	
+	public static int find(Object[] v, int vSize, Object target)
 	{
 		for(int i=0;i<vSize;i++)
 		{
