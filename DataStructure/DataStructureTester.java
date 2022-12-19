@@ -1,7 +1,7 @@
 public class DataStructureTester {
     public static void main (String [] args)
     {
-        GrowingCircularArrayQueue f= new GrowingCircularArrayQueue(3);
+        LinkedList f= new LinkedList();
         //GrowingArrayStack g = new GrowingArrayStack(1);
 
         String s="ciao1";
@@ -9,13 +9,21 @@ public class DataStructureTester {
         String s3="ciao3";
 
 
-        f.enqueue(s);
-        f.enqueue(s2);
-        f.enqueue(s3);
-     
-        System.out.println(f.dequeue());
-        System.out.println(f.dequeue());
+        f.addLast(s);
+        f.addLast(s2);
+        f.addLast(s3);
+        f.addLast(s3+"kuci");
         
+        ListIterator it=f.getIterator();
+        while(it.hasNext())
+        {
+            System.out.println(it.next());
+        }
+        it.remove();
+        System.out.println(f.removeFirst());
+        System.out.println(f.removeLast());
+        System.out.println(f.getFirst());
+
        // System.out.println(f.dequeue());
         //System.out.println(f.pop());
     }
