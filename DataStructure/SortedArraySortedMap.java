@@ -2,7 +2,7 @@
 
 public class SortedArraySortedMap implements SortedMap {
 
-    public static final int INITAL_SIZE=2;
+    public static final int INITIAL_SIZE=2;
     private int vSize;
     Pair [] container;
 
