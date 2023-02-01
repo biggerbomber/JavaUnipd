@@ -26,7 +26,7 @@ public class SortedArraySortedMap implements SortedMap {
     public void makeEmpty()
     {
         vSize=0;
-        container= new Pair[INITAL_SIZE];
+        container= new Pair[INITIAL_SIZE];
     }   
     private int binSearch(Comparable key, int start, int end)
     {   
