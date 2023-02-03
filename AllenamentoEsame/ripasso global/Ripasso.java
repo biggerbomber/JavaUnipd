@@ -10,6 +10,7 @@ public class Ripasso
 			System.exit(1);
 		
 		}
+
 		
 		String [] righe= new String[2];
 		int vSize=0;
